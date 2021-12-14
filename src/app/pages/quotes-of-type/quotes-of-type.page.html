@@ -1,0 +1,38 @@
+<ion-header >
+  <ion-toolbar  color="primary"> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quotes Of Type </ion-title>
+  </ion-toolbar>
+ </ion-header>
+
+
+
+<ion-content class="card-background-page">
+
+  
+  <ion-content class="card-background-page">
+
+    <ion-card *ngFor="let quote of allQuotes">
+      <ion-card-content>
+        {{quote.quoteText }}
+      </ion-card-content>
+      <ion-card-header>  
+        <ion-card-title> -  {{quote.author}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    
+  </ion-content>
+ 
+
+<!--Button to add quote type which will trigger http request-->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addQuoteType()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>
